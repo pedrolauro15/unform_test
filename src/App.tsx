@@ -1,26 +1,19 @@
+import { Form } from '@unform/web';
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Input from './components/form/Input';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Form onSubmit={() => {}}>
+				<h1>Formulário de dados</h1>
+				<Input name="dados.name" placeholder="Nome" />
+				<Input name="dados.age" type="number" placeholder="Idade" />
+				<button type="submit">Enviar dados</button>
+			</Form>
+		</div>
+	);
 }
 
 export default App;
