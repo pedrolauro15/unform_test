@@ -9,6 +9,7 @@
 body {
 	background-color: #010101;
 	color: #fff;
+	font-family: 'Source Code Pro', monospace;
 }
 
 .App {
@@ -16,7 +17,9 @@ body {
 	width: 100%;
 	min-height: 100vh;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
+	padding: 5%;
+	overflow: hidden;
 }
 
 .App > form {
@@ -35,7 +38,32 @@ body {
 	margin-bottom: 16px;
 }
 
-.App > form > input {
+.App > form > h2 {
+	font-weight: 400;
+	letter-spacing: 2px;
+	margin-bottom: 16px;
+	color: #d0d0d0;
+	align-self: flex-start;
+}
+
+.App > form > div.input-cep-controller {
+	position: relative;
+	width: 100%;
+}
+
+.App > form > div#Select_container {
+	width: 100%;
+}
+
+.App > form > div.input-cep-controller > span {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 165%;
+	transform: translate(-80%, -50%);
+}
+
+.App > form > input, .App > form > div.input-cep-controller > input {
 	width: 100%;
 	margin-bottom: 8px;
 	background-color: #111;
@@ -45,7 +73,7 @@ body {
 	font-size: 18px;
 }
 
-.App > form > button {
+.App > form > button, .App > section.json_data > button {
 	margin-top: 16px;
 	background-color: #2574ba;
 	padding: 12px;
@@ -53,4 +81,63 @@ body {
 	border-radius: 4px;
 	font-size: 18px;
 	color: #d0d0d0;
+	cursor: pointer;
+	transition: background cubic-bezier(0.6, -0.28, 0.735, 0.045) .2s;
+}
+
+.App > form > button:hover, .App > section.json_data > button:hover {
+	background-color: #035298;
+}
+
+.App > form > span.warn {
+	font-size: 12px;
+	margin-top: -4px;
+	margin-bottom: 16px;
+	text-align: left;
+	align-self: flex-start;
+	color: #FFFFFF8A;
+}
+
+div.divider {
+	height: 1px;
+	width: 100%;
+	background-color: #FFFFFF55;
+	margin: 20px 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.App > section.json_data {
+	background-color: #222;
+	padding: 32px;
+	border-radius: 8px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	box-shadow: 0 0 16px #ffffff33;
+}
+
+.App > section.json_data > span.chave {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.App > section.json_data > div {
+	padding-left: 10%;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.App > section.json_data > div > section {
+	display: flex;
+	flex-direction: column;
+	padding: 8px 0;
+	padding-left: 15%;
+	width: 100%;
 }
