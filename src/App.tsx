@@ -60,10 +60,14 @@ function App() {
 		}
 		setLoading(false);
 	}
+
+	const clearData = () => {
+		formRef.current?.reset();
+		setJsonData(initialData);
+	}
 	
 	const handleSubmit: SubmitHandler<FormData> = (data) => {
 		setJsonData(data);
-		console.log(data);
 	}
 
 	return (
@@ -97,6 +101,7 @@ function App() {
             options={tipos_logradouros}
             getOptionLabel={(option) => option.type}
             getOptionValue={(option) => option.id}
+            defaultValue={{ id: 1, type: "rua" }}
           />
         </div>
         <button type="submit">Enviar dados</button>
@@ -125,7 +130,7 @@ function App() {
             <span>city: {jsonData.adress.city}</span>
             <span>street: {jsonData.adress.street}</span>
             <span>neighborhood: {jsonData.adress.neighborhood}</span>
-						<span>logradouro_type: {jsonData.adress.logradouro_type}</span>
+            <span>logradouro_type: {jsonData.adress.logradouro_type}</span>
           </section>
           <span className="path">{"}"}</span>
         </div>
@@ -133,7 +138,7 @@ function App() {
           {"}"}
           <br />
         </span>
-        <button>Limpar dados</button>
+        <button onClick={clearData}>Limpar dados</button>
       </section>
     </div>
   );
